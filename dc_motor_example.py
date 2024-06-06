@@ -1,13 +1,9 @@
-import time
-import board
-import pwmio
+import pwmio, board, time
 from adafruit_motor import motor
 
-PWM_PIN_A = board.GP8
-PWM_PIN_B = board.GP9
+pwm_a = pwmio.PWMOut(board.GP8, frequency=50)
+pwm_b = pwmio.PWMOut(board.GP9, frequency=50)
 
-pwm_a = pwmio.PWMOut(PWM_PIN_A, frequency=50)
-pwm_b = pwmio.PWMOut(PWM_PIN_B, frequency=50)
 motor1 = motor.DCMotor(pwm_a, pwm_b)
 
 def set_motor(throttle):
