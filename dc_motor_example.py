@@ -6,10 +6,10 @@ pwm_b = pwmio.PWMOut(board.GP9, frequency=50)
 
 motor1 = motor.DCMotor(pwm_a, pwm_b)
 
-def set_motor(throttle):
+def set_motor1(throttle):
     motor1.throttle = throttle
     print("throttle:", throttle)
 
 while True:
-    set_motor(0.5)
+    set_motor1(0.5)
     time.sleep(1)
